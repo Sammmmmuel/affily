@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="content-section">
-        <form method="POST" action="">
+        <form method="POST" action="" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">
@@ -56,6 +56,20 @@
                     {{ form.email(class="form-control-lg")}}
                     <!-- sss  -->
                     {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.picture.label()}}
+                    <!-- ss -->
+                    {{ form.picture(class="form-control-file")}}
+                    <!-- ss  -->
+                    {% if form.picture.errors %}
+                    <!-- ss  -->
+                    {% for error in form.picture.errors %}
+                    <!-- ss  -->
+                    <span class="text-danger">{{ error }}</span></br>
+                    <!-- sss  -->
+                    {% endfor %} {% endif %}
                 </div>
 
                 <!-- sss  -->
