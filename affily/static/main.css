@@ -2,7 +2,7 @@ body {
     background: #fafafa;
     color: #333333;
     margin-top: 5rem;
-    /* background-image: url("background_image.jpg"); */
+    background-image: url("background_image.jpg");
 }
 
 h1,
@@ -15,7 +15,7 @@ h6 {
 }
 
 .hero-background-img {
-    background-image: url("static/background_image.jpg");
+    background-image: url("background_image.jpg");
 }
 
 */ .bg-steel {

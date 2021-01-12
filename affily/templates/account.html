@@ -1,0 +1,72 @@
+{% extends "layout.html" %} {% block content %}
+<div class="content-section">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}">
+        <div class="media-body">
+            <h2 class="account-heading">{{ current_user.username }}</h2>
+            <p class="text-seconday">{{ current_user.email }}</p>
+        </div>
+    </div>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Account Info
+                </legend>
+
+                <!-- sss  -->
+
+                <div class="form-group">
+                    {{ form.username.label(class="form-control-label")}}
+                    <!-- sss  -->
+                    {% if form.username.errors %}
+                    <!-- ssss  -->
+                    {{ form.username(class="form-control form-control-lg is-invalid")}}
+                    <!-- ssss -->
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                        <span>{{ error }}</span>
+                        <!-- ss  -->
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <!-- ssss  -->
+                    {{ form.username(class="form-control-lg")}}
+                    <!-- sss  -->
+                    {% endif %}
+                </div>
+
+                <!-- ssssss  -->
+
+                <div class="form-group">
+                    {{ form.email.label(class="form-control-label")}}
+                    <!-- sss -->
+                    {% if form.email.errors %}
+                    <!-- ssss  -->
+                    {{ form.email(class="form-control-lg is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                        <!-- sss  -->
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <!-- sss  -->
+                    {{ form.email(class="form-control-lg")}}
+                    <!-- sss  -->
+                    {% endif %}
+                </div>
+
+                <!-- sss  -->
+
+                <!-- sss  -->
+
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info")}}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
