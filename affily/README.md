@@ -1,1 +1,0 @@
-this is affily a place where small streamers can get a little bit more publicity and help them achieve the next level of affiliation amung the twitch comunity. 
